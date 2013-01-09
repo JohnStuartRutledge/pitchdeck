@@ -187,7 +187,7 @@ textarea {
       position: static;
       max-width: 550px;
       padding: 0 20px;
-      margin-top: 200px;
+      margin-top: 120px;
     }
     .carousel-caption h1,
     .carousel-caption .lead {
@@ -225,7 +225,7 @@ textarea {
       margin: 80px 0; /* Space out the Bootstrap <hr> more */
     }
     .featurette {
-      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      /*padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
       overflow: hidden; /* Vertically center images part 2: clear their floats. */
     }
     .featurette-image {
@@ -532,4 +532,16 @@ textarea {
     h3 {
         page-break-after: avoid;
     }
+}
+
+
+/*------------------------------------------*/
+
+.bg_gradient {
+    background: rgb(63, 114, 236);
+    background: -moz-linear-gradient(90deg, rgb(63, 114, 236) 36%, rgb(107, 174, 250) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(63, 114, 236) 36%, rgb(107, 174, 250) 100%);
+    background: -o-linear-gradient(90deg, rgb(63, 114, 236) 36%, rgb(107, 174, 250) 100%);
+    background: -ms-linear-gradient(90deg, rgb(63, 114, 236) 36%, rgb(107, 174, 250) 100%);
+    background: linear-gradient(180deg, rgb(63, 114, 236) 36%, rgb(107, 174, 250) 100%);
 }
