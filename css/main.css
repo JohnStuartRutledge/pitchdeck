@@ -526,6 +526,14 @@ textarea {
 
 /*--------------------------------------------------------------------------*/
 
+#main_logo {
+    position: relative;
+    top: 0;
+    left: 0;
+    min-width: auto;
+    height: auto;
+}
+
 .bg_lightgrey {
     background-color: #EEE;
 }
