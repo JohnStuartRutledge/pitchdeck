@@ -56,7 +56,6 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="#">LikeRiser</a>
         <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
         <div class="nav-collapse collapse">
           <ul class="nav">
@@ -79,9 +78,9 @@
   <div class="carousel-inner">
     <div class="item active gradient_blue">
       <div class="container">
-        <div class="carousel-caption">
+        <div id="main_logo_parent" class="carousel-caption">
             <img id="main_logo" src="img/logo-medium.png" alt="likeRiser">
-            <p class="lead">A full gamified platform for running promotions across any social media site. Choose the game, rules, and reward that's right for you. We're like a gamified Groupon for social networks.
+            <p class="lead">A full gamified platform for running promotions across any social media site. Choose the game, rules, and reward that's right for you.
             </p>
         </div>
       </div>
@@ -99,14 +98,15 @@
                     <div class="span4">
                         <h2>Vision</h2>
                         <p>How we see the future of social media, and what we do. This is the Grab.</p>
+                        <p>If you know your market well enough your promotions stop feeling like advertising and start feeling like information</p>
                     </div><!-- /.span4 -->
                     <div class="span4">
                         <h2>Problem</h2>
-                        <p>The problem that companies have running promotional campaigns, assessing ROI, getting leads, etc.</p>
+                        <p>It's hard to measure ROI. People do not like being marketed to. Managing social media marketing campaigns is time consuming.</p>
                     </div><!-- /.span4 -->
                     <div class="span4">
                         <h2>Solution</h2>
-                        <p>How are porduct provides a solutions. Extra gamification details here.</p>
+                        <p>A web platform for running gamified promotions across social media networks</p>
                     </div><!-- /.span4 -->
                 </div><!-- /.row -->
             </div>
@@ -140,6 +140,8 @@
                     </ul>
                     <h3>Specific Info On Our Target Markets</h3>
                     <p>This section is about <b>who</b> we are targeting and <b>why</b>. Later on, in the "finance" section we will discuss how we are going to target them.</p>
+
+                    <p>Our initial target markets by industry:</p>
                     <ul>
                       <li>Entertainment, Music</li>
                       <li>Restaurants, Food/Beverages</li>
@@ -154,6 +156,13 @@
             <div class="container">
                 <div class="carousel-caption">
                 <h1>Details</h1>
+                <p>Factors we considered when choosing our target markets:</p>
+                <ul>
+                    <li>Industry % of GDP (market share)</li>
+                    <li>Typical marketing budget, specifically social media marketing</li>
+                    <li>How many potential competitors currently saturate the market</li>
+                    <li>Regulatory limitations</li>
+                </ul>
                 </div>
             </div>
         </div>
@@ -175,6 +184,7 @@
                     <p class="lead">Gamification, social media promotional campaigns, new ROI metrics.</p>
                     <h3>Features that make us different</h3>
                     <p>Monitor your brand advocates live, foster link engagement, and take advantage of multiple new techniques for tracking ROI. Gain access to a full suite of analytics and reports by taking advantage of the latest advancements in machine learning and natural langauge processing. Create beautiful visualisations from your data – download them in the format of your choice or share them on the web. Plug your data directly in to your existing suite of marketing tools.</p>
+                    <img class="LR_image" src="img/likeriser_concept01.jpg" alt="LikeRiser concept image">
                     <h3>Data details, Improved ROI details</h3>
                     <ul>
                       <li>This section should describe what LikeRiser can currently do</li>
@@ -283,10 +293,6 @@
                         <p class="lead">John Rutledge</p>
                         <p>Biographic history, and story of how this persons experience/character uniquely contributes to the team.</p>
                     </div>
-                    <div class="span3">
-                        <p class="lead">James Rutledge</p>
-                        <p>Biographic history, and story of how this persons experience/character uniquely contributes to the team.</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -324,7 +330,52 @@
 
 <script type="text/javascript">
 
+// pause the carousel to prevent auto-rotation
 $('.carousel').carousel('pause');
+
+// hide carousel controls if only one slide is present
+if ( $('.carousel-inner div').length === 1 ) {
+    $('.controls .carousel-control').hide();
+}
+
+// hide left or right arrows depending on slide
+
+// on click of <a class="right carousel-control">
+// get parent divs id (e.g, myCarousel4)
+// get slide number
+
+$('.carousel').bind('slid', function() {
+    // get currently selected item
+    var item = $('.carousel .carousel-inner .item.active'),
+        index = item.index() + 1,
+        carouselID = $(this).attr('id'),
+        slides = $(this).find('.item'),
+        slidecount = slides.length;
+
+    //console.log(slidecount);
+
+    if (index === 1) {
+        $(this).find('a.left').hide();
+    } else if (index === slidecount) {
+        $(this).find('a.left').show();
+    } else {
+        $(this).find('a.left, a.right').show()
+    }
+
+    //console.log($(this).find('.item'));
+    // $(this).attr('id');
+
+});
+
+/*
+
+$('.carousel-control').on('click', function() {
+    $('.carousel').carousel(1).on('slid', function() {
+        // remove appropriate arrow
+    });
+});
+
+*/
 
 </script>
 
