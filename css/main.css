@@ -176,7 +176,7 @@ textarea {
     .carousel .item {
       min-height: 500px;
     }
-    .carousel img {
+    .carousel img.fillnode {
       position: absolute;
       top: 0;
       left: 0;
@@ -189,7 +189,7 @@ textarea {
       position: static;
       max-width: 550px;
       padding: 0 20px;
-      margin-top: 120px;
+      margin-top: 50px; /* 120px */
     }
     .carousel-caption h1,
     .carousel-caption .lead {
@@ -200,6 +200,10 @@ textarea {
     }
     .carousel-caption .btn {
       margin-top: 10px;
+    }
+
+    .carousel-content {
+      padding: 0 20px 120px !important;
     }
 
 
@@ -564,4 +568,12 @@ textarea {
 
 .carousel-control {
   color: #000;
+}
+
+/* hide control arrows until the user hovers over the carousel */
+.carousel .carousel-control { display: none; }
+.carousel:hover .carousel-control { display: inherit; }
+
+#myCarousel2 .item:nth-child(1) .container {
+  padding-top: 140px;
 }
